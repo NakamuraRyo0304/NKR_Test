@@ -3,16 +3,20 @@ using UnityEngine;
 
 public static class MakeGroupedObject
 {
-    [MenuItem("MyEditor/Make GroupedObject %g")]
-    public static void GroupSelected()
+    [MenuItem("NKR Editor/Make GroupedObject %g")]
+    public static void GroupSelected() // グループにまとめる
     {
         // 選択されているオブジェクトを取得
         GameObject[] selectedObjects = Selection.gameObjects;
 
         if (selectedObjects.Length > 0)
         {
+            // Undoの登録
+            Undo.SetCurrentGroupName("Group Objects");
+            int groupIndex = Undo.GetCurrentGroup();
+
             // 新しいGameObjectを作成してグループ化
-            GameObject group = new GameObject("New Grouped Object");
+            GameObject group = new GameObject($"{selectedObjects[0].name}'s Group");
 
             // 選択されたオブジェクトの平均座標を計算
             Vector3 averagePosition = Vector3.zero;
@@ -28,8 +32,13 @@ public static class MakeGroupedObject
             // 選択されたオブジェクトをグループの子オブジェクトにする
             foreach (GameObject obj in selectedObjects)
             {
+                // Undoの記録
+                Undo.SetTransformParent(obj.transform, group.transform, "Parent to Group");
                 obj.transform.SetParent(group.transform);
             }
+
+            // Undoグループを終了
+            Undo.CollapseUndoOperations(groupIndex);
         }
     }
 }

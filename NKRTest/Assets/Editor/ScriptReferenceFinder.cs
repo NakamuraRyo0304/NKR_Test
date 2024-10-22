@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class ScriptReferenceFinder : EditorWindow
 {
@@ -13,11 +12,11 @@ public class ScriptReferenceFinder : EditorWindow
     private List<string> prefabObjectReferences = new List<string>();
 
     // エディタウィンドウを表示するためのメニュー項目を追加
-    [MenuItem("MyEditor/ScriptReferenceFinder")]
+    [MenuItem("NKR Editor/ScriptReferenceFinder")]
     public static void ShowWindow()
     {
         // エディタウィンドウを作成し、タイトルを設定
-        GetWindow<ScriptReferenceFinder>("Script Reference Finder");
+        GetWindow<ScriptReferenceFinder>("ScriptReferenceFinder");
     }
 
     // ウィンドウのGUIを描画する
@@ -65,6 +64,7 @@ public class ScriptReferenceFinder : EditorWindow
         if (targetScript != null)
         {
             EditorGUILayout.LabelField("検索結果:", EditorStyles.boldLabel);
+
 
             // プレハブを表示してからシーンオブジェクトを表示する
             foreach (string reference in prefabObjectReferences)
