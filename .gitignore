@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 NKRTest/Library/
 NKRTest/Temp/
+NKRTest/Logs/
