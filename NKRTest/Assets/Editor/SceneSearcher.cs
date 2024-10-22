@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class SceneSearcher : EditorWindow
 {
@@ -108,6 +109,10 @@ public class SceneSearcher : EditorWindow
         {
             Separate(1.0f);
             EditorGUILayout.LabelField(folder.Key);
+
+            // プレイ中はボタンを無効にする
+            GUI.enabled = !Application.isPlaying;
+
             foreach (string sceneName in folder.Value)
             {
                 if (GUILayout.Button(sceneName))
@@ -123,8 +128,18 @@ public class SceneSearcher : EditorWindow
                     }
                 }
             }
+
+            // GUIを再度有効に戻す
+            GUI.enabled = true;
+        }
+
+        // プレイ中にボタンを無効にしている旨のメッセージを表示
+        if (Application.isPlaying)
+        {
+            EditorGUILayout.HelpBox("プレイ中のためシーンを変更できません。", MessageType.Warning);
         }
     }
+
 
     private void OpenScene(string scenePath)    // シーンを開く
     {
@@ -189,17 +204,30 @@ public class SceneSearcher : EditorWindow
         GUILayout.Label($"コピー元：{copyScenePath + copySceneName + EXTENSION}");
         GUILayout.Label($"コピー先：{newScenePath + newSceneName + EXTENSION}");
 
+        // プレイ中はボタンを無効にする
+        GUI.enabled = !Application.isPlaying;
+
         if (GUILayout.Button("新しくシーンを複製"))
         {
             CopyScene();
         }
 
-        // コピー元フルパス ==> シーン保存先/シーン名.unity に保存
+        // GUIを再度有効に戻す
+        GUI.enabled = true;
+
+        // プレイ中はメッセージを表示する
+        if (Application.isPlaying)
+        {
+            EditorGUILayout.HelpBox("プレイ中のためシーンを複製できません。", MessageType.Warning);
+        }
+
+        // コピー元とコピー先のパス入力フィールド
         copyScenePath = EditorGUILayout.TextField("コピー元フォルダパス", copyScenePath);
-        copySceneName = EditorGUILayout.TextField("コピー元シーンパス", copySceneName);
+        copySceneName = EditorGUILayout.TextField("コピー元シーン名", copySceneName);
         newScenePath = EditorGUILayout.TextField("コピー先フォルダパス", newScenePath);
-        newSceneName = EditorGUILayout.TextField("コピー先シーンパス", newSceneName);
+        newSceneName = EditorGUILayout.TextField("コピー先シーン名", newSceneName);
     }
+
 
     private void CopyScene() // シーンをコピーする
     {
