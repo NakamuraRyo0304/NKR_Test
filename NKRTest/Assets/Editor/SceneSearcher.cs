@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using System.IO;
-using UnityEngine.SceneManagement;
 
 public class SceneSearcher : EditorWindow
 {
