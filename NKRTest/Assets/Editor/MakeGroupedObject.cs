@@ -1,5 +1,17 @@
+/**************************************************
+* File:           MakeGroupedObject.cs
+*
+* Description:    オブジェクトを "Ctrl + G" でグループ化する
+*
+* Update:         2024 / 10 / 23
+*
+* Author:         Ryo Nakamura
+***************************************************/
+
+
 using UnityEditor;
 using UnityEngine;
+
 
 public static class MakeGroupedObject
 {

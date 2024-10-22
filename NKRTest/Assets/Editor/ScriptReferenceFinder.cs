@@ -1,6 +1,18 @@
+/**************************************************
+* File:           ScriptReferenceFinder.cs
+*
+* Description:    参照しているオブジェクトを検索する
+*
+* Update:         2024 / 10 / 23
+*
+* Author:         Ryo Nakamura
+***************************************************/
+
+
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+
 
 public class ScriptReferenceFinder : EditorWindow
 {
@@ -22,6 +34,9 @@ public class ScriptReferenceFinder : EditorWindow
     // ウィンドウのGUIを描画する
     void OnGUI()
     {
+        // プレイ中はGUIを使用しない
+        CutEditorGUI();
+
         // 説明ラベルを表示
         EditorGUILayout.LabelField("ここにスクリプトをドラッグ＆ドロップしてください");
 
@@ -119,5 +134,21 @@ public class ScriptReferenceFinder : EditorWindow
             parent = parent.parent;
         }
         return path;
+    }
+
+    // プレイ中はGUIをカットする
+    private void CutEditorGUI()
+    {
+        // プレイ中はGUIを無効
+        GUI.enabled = !Application.isPlaying;
+
+        // プレイ中にボタンを無効にしている旨のメッセージを表示
+        if (Application.isPlaying)
+        {
+            EditorGUILayout.HelpBox(
+                "プレイ中のためスクリプト検索はできません。",
+                MessageType.Warning
+                );
+        }
     }
 }

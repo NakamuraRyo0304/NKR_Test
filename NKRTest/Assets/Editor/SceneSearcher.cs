@@ -1,8 +1,20 @@
+/**************************************************
+* File:           SceneSearcher.cs
+*
+* Description:    シーンの一元管理
+*
+* Update:         2024 / 10 / 23
+*
+* Author:         Ryo Nakamura
+***************************************************/
+
+
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using System.IO;
+
 
 public class SceneSearcher : EditorWindow
 {
@@ -135,7 +147,10 @@ public class SceneSearcher : EditorWindow
         // プレイ中にボタンを無効にしている旨のメッセージを表示
         if (Application.isPlaying)
         {
-            EditorGUILayout.HelpBox("プレイ中のためシーンを変更できません。", MessageType.Warning);
+            EditorGUILayout.HelpBox(
+                "プレイ中のためシーンを変更できません。",
+                MessageType.Warning
+                );
         }
     }
 
@@ -217,7 +232,10 @@ public class SceneSearcher : EditorWindow
         // プレイ中はメッセージを表示する
         if (Application.isPlaying)
         {
-            EditorGUILayout.HelpBox("プレイ中のためシーンを複製できません。", MessageType.Warning);
+            EditorGUILayout.HelpBox(
+                "プレイ中のためシーンを複製できません。",
+                MessageType.Warning
+                );
         }
 
         // コピー元とコピー先のパス入力フィールド

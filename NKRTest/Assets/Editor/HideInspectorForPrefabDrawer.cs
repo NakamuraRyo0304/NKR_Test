@@ -1,6 +1,18 @@
+/**************************************************
+* File:           HideInspectorForPrefabDrawer.cs
+*
+* Description:    プレハブの時のみ編集可能な属性
+*
+* Update:         2024 / 10 / 23
+*
+* Author:         Ryo Nakamura
+***************************************************/
+
+
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+
 
 [CustomPropertyDrawer(typeof(HideInspectorForPrefabAttribute))]
 public class HideInspectorForPrefabDrawer : PropertyDrawer
