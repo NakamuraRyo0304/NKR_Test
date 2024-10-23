@@ -16,4 +16,5 @@ using UnityEngine;
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
 public class PrefabInspectorAttribute : PropertyAttribute
 {
+    // 単純なロジックのため特記事項はなし
 }

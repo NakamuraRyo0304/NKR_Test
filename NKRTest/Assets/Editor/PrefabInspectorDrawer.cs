@@ -20,28 +20,29 @@ public class PrefabInspectorDrawer : PropertyDrawer
     // 編集不可能フィールドの設定
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        // エディタモードかどうかをチェックする
-        var obj = property.serializedObject.targetObject;
-        bool isInPrefabEditMode = PrefabStageUtility.GetCurrentPrefabStage() ||
-                                  PrefabUtility.IsPartOfPrefabAsset(obj);
-
-        // プレハブエディタじゃないときは表示しない
-        if (!isInPrefabEditMode) return;
-     
-        EditorGUI.PropertyField(position, property, label, true);
+        // プレハブを開いていたら実行
+        if (IsEditorMode(property))
+        {
+            EditorGUI.PropertyField(position, property, label, true);
+        }
     }
 
     // プロパティの高さを設定する
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    {
+        // エディタモードなら高さを作成する
+        // そうでなければ高さを０にしてつぶす
+        return IsEditorMode(property) ? EditorGUI.GetPropertyHeight(property, label, true) : 0;
+    }
+
+    private bool IsEditorMode(SerializedProperty property)
     {
         // エディタモードかどうかをチェックする
         var obj = property.serializedObject.targetObject;
         bool isInPrefabEditMode = PrefabStageUtility.GetCurrentPrefabStage() ||
                                   PrefabUtility.IsPartOfPrefabAsset(obj);
 
-        // プレハブエディタじゃないときは表示しない
-        if (!isInPrefabEditMode) return 0;
-
-        return EditorGUI.GetPropertyHeight(property, label, true);
+        // エディタモードか判定を返す
+        return isInPrefabEditMode;
     }
 }
