@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ScanLineMat
+  m_Shader: {fileID: 4800000, guid: 135048ac9641b4848897a71356ebb1d7, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 8400000, guid: 6f602b3bd14dab34d807170074e822fb, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _BigLineSpan: 0.05
+    - _BigLineSpeed: 1
+    - _BigLineThickness: 0.02
+    - _FlickeringSpeed: 600
+    - _FlickeringStrength: 0.02
+    - _OpacityNoise: 0.1
+    - _OpacityScanLine: 0.1967864
+    - _ScanlineThickness: 0.1
+    m_Colors:
+    - _BigLineColor: {r: 0.7985217, g: 1, b: 0.4377358, a: 1}
+    - _TintColor: {r: 0.6838476, g: 1, b: 0.5886792, a: 1}
+  m_BuildTextureStacks: []
