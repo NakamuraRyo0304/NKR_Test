@@ -1,5 +1,5 @@
 /**************************************************
-* File:           HideInspectorForPrefabDrawer.cs
+* File:           PrefabInspectorDrawer.cs
 *
 * Description:    プレハブの時のみ編集可能な属性
 *
@@ -14,8 +14,8 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 
 
-[CustomPropertyDrawer(typeof(HideInspectorForPrefabAttribute))]
-public class HideInspectorForPrefabDrawer : PropertyDrawer
+[CustomPropertyDrawer(typeof(PrefabInspectorAttribute))]
+public class PrefabInspectorDrawer : PropertyDrawer
 {
     // 編集不可能フィールドの設定
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

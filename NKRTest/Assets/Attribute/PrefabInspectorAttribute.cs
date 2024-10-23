@@ -1,5 +1,5 @@
 /**************************************************
-* File:           HideInspectorForPrefabAttribute.cs
+* File:           PrefabInspectorAttribute.cs
 *
 * Description:    プレハブの時のみ編集可能な属性
 *
@@ -14,6 +14,6 @@ using UnityEngine;
 
 
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
-public class HideInspectorForPrefabAttribute : PropertyAttribute
+public class PrefabInspectorAttribute : PropertyAttribute
 {
 }

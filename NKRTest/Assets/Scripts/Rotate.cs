@@ -1,8 +1,20 @@
+/**************************************************
+* File:           Rotate.cs
+*
+* Description:    ‰ñ“]‚³‚¹‚éƒNƒ‰ƒX
+*
+* Update:         2024 / 10 / 23
+*
+* Author:         Ryo Nakamura
+***************************************************/
+
+
 using UnityEngine;
+
 
 public class Rotate : MonoBehaviour
 {
-    [SerializeField, HideInspectorForPrefab] private float rotate_speed = 15f;
+    [SerializeField, PrefabInspector] private float rotate_speed = 15f;
 
     void Start()
     {
