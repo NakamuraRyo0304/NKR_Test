@@ -33,7 +33,7 @@ Material:
     - _FlickeringSpeed: 600
     - _FlickeringStrength: 0.02
     - _OpacityNoise: 0.1
-    - _OpacityScanLine: 0.1967864
+    - _OpacityScanLine: 0.001527071
     - _ScanlineThickness: 0.1
     m_Colors:
     - _BigLineColor: {r: 0.7985217, g: 1, b: 0.4377358, a: 1}

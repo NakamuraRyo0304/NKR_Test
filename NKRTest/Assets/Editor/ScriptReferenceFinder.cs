@@ -22,6 +22,7 @@ public class ScriptReferenceFinder : EditorWindow
     // 参照結果を格納するリスト（オブジェクト）
     private List<string> sceneObjectReferences = new List<string>();
     private List<string> prefabObjectReferences = new List<string>();
+    private Vector2 scenesScroll;
 
     // エディタウィンドウを表示するためのメニュー項目を追加
     [MenuItem("NKR Editor/ScriptReferenceFinder")]
@@ -80,12 +81,16 @@ public class ScriptReferenceFinder : EditorWindow
         {
             EditorGUILayout.LabelField("検索結果:", EditorStyles.boldLabel);
 
+            // スクロールバー
+            scenesScroll = EditorGUILayout.BeginScrollView(scenesScroll, GUILayout.Height(100));
 
             // プレハブを表示してからシーンオブジェクトを表示する
             foreach (string reference in prefabObjectReferences)
                 EditorGUILayout.LabelField(reference);
             foreach (string reference in sceneObjectReferences)
                 EditorGUILayout.LabelField(reference);
+
+            EditorGUILayout.EndScrollView();
         }
     }
 
