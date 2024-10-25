@@ -13,6 +13,9 @@ using System;
 using UnityEngine;
 
 
+/// <summary>
+/// Used in conjunction with SerializeField, it can be displayed only when Prefab is being edited.
+/// </summary>
 [AttributeUsage(AttributeTargets.Field, Inherited = true, AllowMultiple = false)]
 public class PrefabInspectorAttribute : PropertyAttribute
 {

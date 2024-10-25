@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 343004508890383842}
   - component: {fileID: 5439955196503019140}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: RotateCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
