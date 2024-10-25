@@ -18,7 +18,7 @@ public class Rotate : MonoBehaviour
 
     void Start()
     {
-        
+        // ‰½‚©‰Šú‰»‚ğs‚¤B
     }
 
     void Update()
