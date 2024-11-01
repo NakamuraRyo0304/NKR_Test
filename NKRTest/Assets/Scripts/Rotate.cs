@@ -16,12 +16,12 @@ public class Rotate : MonoBehaviour
 {
     [SerializeField, SerializePrefab] private float rotate_speed = 15f;
 
-    void Start()
+    private void Start()
     {
         // ‰½‚©‰Šú‰»‚ğs‚¤B
     }
 
-    void Update()
+    private void Update()
     {
         transform.Rotate(0, rotate_speed * Time.deltaTime, 0, Space.Self);
     }

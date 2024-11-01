@@ -3,7 +3,7 @@
 *
 * Description:    シーンの一元管理
 *
-* Update:         2024 / 10 / 23
+* Update:         2024 / 11 / 02
 *
 * Author:         Ryo Nakamura
 ***************************************************/
@@ -16,6 +16,9 @@ using UnityEditor.SceneManagement;
 using System.IO;
 
 
+/// <summary>
+/// Supports scene management and build settings management.
+/// </summary>
 public class SceneSearcher : EditorWindow
 {
     // フォルダ

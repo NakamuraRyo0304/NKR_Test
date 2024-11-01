@@ -3,7 +3,7 @@
 *
 * Description:    参照しているオブジェクトを検索する
 *
-* Update:         2024 / 10 / 23
+* Update:         2024 / 11 / 02
 *
 * Author:         Ryo Nakamura
 ***************************************************/
@@ -14,6 +14,9 @@ using UnityEditor;
 using System.Collections.Generic;
 
 
+/// <summary>
+/// Searches for and displays references to scripts that have been drag-and-dropped.
+/// </summary>
 public class ScriptReferenceFinder : EditorWindow
 {
     // 検索対象となるスクリプト

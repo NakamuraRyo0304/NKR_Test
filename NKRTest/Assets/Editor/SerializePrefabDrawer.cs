@@ -14,6 +14,9 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 
 
+/// <summary>
+/// Used in conjunction with SerializeField, it can be displayed only when Prefab is being edited.
+/// </summary>
 [CustomPropertyDrawer(typeof(SerializePrefabAttribute))]
 public class SerializePrefabDrawer : PropertyDrawer
 {
