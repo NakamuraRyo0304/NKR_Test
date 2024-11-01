@@ -215,8 +215,8 @@ public class SceneSearcher : EditorWindow
     private void CreateSceneButton()    // 新しくシーンを作成する
     {
         GUILayout.Label("コピー元からコピー先に複製します");
-        GUILayout.Label($"コピー元：{copyScenePath + copySceneName + EXTENSION}");
-        GUILayout.Label($"コピー先：{newScenePath + newSceneName + EXTENSION}");
+        GUILayout.Label($"「{copyScenePath + copySceneName + EXTENSION}」");
+        GUILayout.Label($"->「{newScenePath + newSceneName + EXTENSION}」");
 
         // プレイ中はボタンを無効にする
         GUI.enabled = !Application.isPlaying;

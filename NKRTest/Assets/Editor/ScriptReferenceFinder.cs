@@ -79,7 +79,10 @@ public class ScriptReferenceFinder : EditorWindow
         // スクリプトが設定されている場合、検索結果を表示
         if (targetScript != null)
         {
-            EditorGUILayout.LabelField("検索結果:", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField(
+               "参照中オブジェクト 検索結果:",
+                EditorStyles.boldLabel
+                );
 
             // スクロールバー
             scenesScroll = EditorGUILayout.BeginScrollView(scenesScroll, GUILayout.Height(100));

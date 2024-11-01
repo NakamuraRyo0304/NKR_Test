@@ -3,7 +3,7 @@
 *
 * Description:    ‰ñ“]‚³‚¹‚éƒNƒ‰ƒX
 *
-* Update:         2024 / 10 / 23
+* Update:         2024 / 11 / 02
 *
 * Author:         Ryo Nakamura
 ***************************************************/
@@ -14,7 +14,7 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-    [SerializeField, PrefabInspector] private float rotate_speed = 15f;
+    [SerializeField, SerializePrefab] private float rotate_speed = 15f;
 
     void Start()
     {

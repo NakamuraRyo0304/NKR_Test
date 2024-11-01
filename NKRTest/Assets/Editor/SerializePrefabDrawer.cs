@@ -1,9 +1,9 @@
 /**************************************************
-* File:           PrefabInspectorDrawer.cs
+* File:           SerializePrefabDrawer.cs
 *
 * Description:    プレハブの時のみ編集可能な属性
 *
-* Update:         2024 / 10 / 23
+* Update:         2024 / 11 / 01
 *
 * Author:         Ryo Nakamura
 ***************************************************/
@@ -14,8 +14,8 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 
 
-[CustomPropertyDrawer(typeof(PrefabInspectorAttribute))]
-public class PrefabInspectorDrawer : PropertyDrawer
+[CustomPropertyDrawer(typeof(SerializePrefabAttribute))]
+public class SerializePrefabDrawer : PropertyDrawer
 {
     // 編集不可能フィールドの設定
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
