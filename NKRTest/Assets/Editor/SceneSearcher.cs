@@ -326,7 +326,7 @@ public class SceneSearcher : EditorWindow
         EditorBuildSettings.scenes = buildScenes;
     }
 
-    private void RemoveSceneFromBuild(string scenePath) // ビルドからさくじょする
+    private void RemoveSceneFromBuild(string scenePath) // ビルドから削除する
     {
         EditorBuildSettingsScene[] buildScenes = EditorBuildSettings.scenes;
 
